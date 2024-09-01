@@ -17,7 +17,7 @@ public class StudentManager {
       if (student != null) {
         System.out.println("Student name " + student.getName());
       } else {
-        throw new StudentNotFoundException("Could not find student with ID " + i);
+        throw new StudentNotFoundException("Could not find student with ID " + IDs[i]);
       }
     }
 
