@@ -9,12 +9,16 @@ public class StudentManager {
     return Student.getValueOf(studentID);
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws StudentNotFoundException {
     StudentManager manager = new StudentManager();
 
     for (int i = 0; i < IDs.length; i++) {
       Student student = manager.find(IDs[i]);
-      System.out.println("Student name " + student.getName());
+      if (student != null) {
+        System.out.println("Student name " + student.getName());
+      } else {
+        throw new StudentNotFoundException("Could not find student with ID " + i);
+      }
     }
 
   }
